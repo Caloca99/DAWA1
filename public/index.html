@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD de Productos</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="contenedor">
+      <section class="panel">
+        <h1>Gestion de Productos</h1>
+        <p class="subtitulo">
+          Registra, edita y elimina productos conectados a MongoDB Atlas.
+        </p>
+
+        <form id="producto-form" class="formulario">
+          <input type="hidden" id="producto-id" />
+
+          <div class="campo">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" name="nombre" type="text" required />
+          </div>
+
+          <div class="campo">
+            <label for="descripcion">Descripcion</label>
+            <textarea id="descripcion" name="descripcion" rows="3" required></textarea>
+          </div>
+
+          <div class="grid">
+            <div class="campo">
+              <label for="precio">Precio</label>
+              <input id="precio" name="precio" type="number" min="0" step="0.01" required />
+            </div>
+
+            <div class="campo">
+              <label for="stock">Stock</label>
+              <input id="stock" name="stock" type="number" min="0" required />
+            </div>
+          </div>
+
+          <div class="campo">
+            <label for="categoria">Categoria</label>
+            <select id="categoria" name="categoria" required>
+              <option value="">Seleccione una categoria</option>
+              <option value="Electronica">Electronica</option>
+              <option value="Ropa">Ropa</option>
+              <option value="Alimentos">Alimentos</option>
+            </select>
+          </div>
+
+          <div class="acciones-formulario">
+            <button type="submit" id="btn-guardar">Guardar producto</button>
+            <button type="button" id="btn-cancelar" class="secundario oculto">
+              Cancelar edicion
+            </button>
+          </div>
+        </form>
+
+        <p id="mensaje" class="mensaje" aria-live="polite"></p>
+      </section>
+
+      <section class="panel">
+        <div class="tabla-encabezado">
+          <h2>Lista de productos</h2>
+          <button id="btn-recargar" class="secundario">Recargar</button>
+        </div>
+
+        <div class="tabla-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Categoria</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="tabla-productos"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+  </html>

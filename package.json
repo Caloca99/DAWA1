@@ -1,0 +1,26 @@
+{
+  "name": "crud-productos-express-mongodb",
+  "version": "1.0.0",
+  "description": "Aplicacion web CRUD de productos con Node.js, Express y MongoDB Atlas",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "express",
+    "mongoose",
+    "mongodb",
+    "crud"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
